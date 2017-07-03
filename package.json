@@ -1,0 +1,16 @@
+{
+  "name": "anu-cli",
+  "version": "1.0.5",
+  "description": "",
+  "main": "anu-cli.js",
+  "author": "LevanDu",
+  "license": "ISC",
+  "dependencies": {
+    "bluebird": "^3.5.0",
+    "commander": "^2.10.0",
+    "fs-extra": "^3.0.1"
+  },
+  "bin": {
+    "anu": "anu-cli.js"
+  }
+}
