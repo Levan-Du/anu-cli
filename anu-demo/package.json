@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack && webpack-dev-server",
-    "build": "set NODE_ENV=production&&webpack --progress --profile"
+    "build": "set NODE_ENV=production&&webpack --config webpack.config.prod.js --progress --profile"
   },
   "author": "LevanDu",
   "license": "ISC",
@@ -24,7 +24,7 @@
     "webpack-dev-server": "^2.5.0"
   },
   "dependencies": {
-    "anujs": "^1.0.2",
+    "anujs": "^1.0.3",
     "html5shiv": "^3.7.3"
   }
 }
