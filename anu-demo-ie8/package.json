@@ -21,12 +21,12 @@
     "express": "^4.15.3",
     "html-webpack-plugin": "^2.28.0",
     "html-withimg-loader": "^0.1.16",
-    "style-loader": "^0.14.1",
+    "style-loader": "0.14.1",
     "transfer-webpack-plugin": "^0.1.4",
     "url-loader": "^0.5.9",
     "webpack": "^1.15.0",
-    "webpack-dev-middleware": "^1.11.0",
-    "webpack-hot-middleware": "^2.18.1"
+    "webpack-dev-middleware": "1.11.0",
+    "webpack-hot-middleware": "2.18.1"
   },
   "dependencies": {
     "anujs": "^1.0.3",
