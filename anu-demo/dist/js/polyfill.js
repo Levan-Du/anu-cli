@@ -114,7 +114,7 @@ if (!Array.prototype.indexOf) {
     Array.prototype.indexOf = function(el) {
         var _arr = this;
         for (var i in _arr) {
-            if (_arr.hasOwnProperty(i) && arr[i] === el) {
+            if (_arr.hasOwnProperty(i) && _arr[i] === el) {
                 return parseInt(i);
             }
         }
