@@ -5,7 +5,7 @@ anujs是react的迷你版，由去哪儿前端大神司徒正美推出，完全�
   安装命令行工具
   
 2. anu project_name --ie
-  使用命令创建项目，project_name是你的项目名称，--ie选项表示支持低版本ie浏览器（ie8及以下），省略--e选项表示项目不兼容低版本ie
+  使用anu命令创建项目，project_name是你的项目名称，--ie选项表示支持低版本ie浏览器（ie8及以下），省略--e选项表示项目不兼容低版本ie
   
 3. cd project_name
   命令行切换到上面创建的项目目录
