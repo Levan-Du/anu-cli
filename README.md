@@ -1,4 +1,4 @@
-anujs是一个react迷你版，由去哪儿前端大神司徒正美推出，可完全使用react语法，并兼容低版本ie浏览器。详见https://github.com/RubyLouvre/anu
+anujs是react的迷你版，由去哪儿前端大神司徒正美推出，完全兼容react语法，并兼容低版本ie浏览器。详见https://github.com/RubyLouvre/anu
 这个是anujs的手脚架，可快速创建anujs项目，以下是用法：
 1. npm i -g anu-cli
   安装命令行工具
