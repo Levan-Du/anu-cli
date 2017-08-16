@@ -285,7 +285,7 @@ if (!Object.keys) {
 
 
     Array.isArray || (Array.isArray = function(arr) {
-        return toString.call(arr) == '[object Array]';
+        return Object.prototype.toString.call(arr) == '[object Array]';
     });
 
     Object.is || (Object.is = function is(x, y) {

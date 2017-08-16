@@ -1,6 +1,6 @@
 {
   "name": "anu-cli",
-  "version": "1.0.6",
+  "version": "1.0.8",
   "description": "",
   "main": "anu-cli.js",
   "author": "LevanDu",
@@ -12,5 +12,9 @@
   },
   "bin": {
     "anu": "anu-cli.js"
+  },
+  "devDependencies": {
+    "es3ify-loader": "^0.2.0",
+    "webpack-hot-middleware": "^2.1.0"
   }
 }

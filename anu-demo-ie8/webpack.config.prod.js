@@ -32,7 +32,7 @@ module.exports = {
         }),
         new TransferWebpackPlugin([
             { from: 'services/polyfill', to: '/js' }
-        ], path.join(__dirname, 'src')), 
+        ], path.join(__dirname, 'src')),
         new webpack.optimize.UglifyJsPlugin({
             compress: {
                 properties: false,

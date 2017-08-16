@@ -1,12 +1,5 @@
-const React = require('react');
+const React = require( 'react');
 const ReactDOM = require('react-dom');
-
-const Page101 = () =>
-    <article style={styles.page}>
-	<h3>this is page101</h3>
-	<p>101101101101101101101101101101101101</p>
-</article>
-
 
 var styles = {
     page: {
@@ -15,4 +8,9 @@ var styles = {
     }
 }
 
-module.exports = Page101;
+exports.Page101 = () =>
+    <article style={styles.page}>
+	<h3>this is page101</h3>
+	<p>101101101101101101101101101101101101</p>
+</article>
+
