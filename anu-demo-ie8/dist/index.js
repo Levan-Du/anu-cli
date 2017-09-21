@@ -50,7 +50,7 @@
 /******/ 			}
 /******/ 		};
 /******/ 	}
-/******/
+
 /******/ 	
 /******/ 	
 /******/ 	// Copied from https://github.com/facebook/react/blob/bef45b0/src/shared/utils/canDefineProperty.js
@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "b7081b76593d65e3fe0a"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "e40d9b3fa622381837bb"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -531,17 +531,17 @@
 /******/ 		hotSetStatus("idle");
 /******/ 		callback(null, outdatedModules);
 /******/ 	}
-/******/
+
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
-/******/
+
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
-/******/
+
 /******/ 		// Check if module is in cache
 /******/ 		if(installedModules[moduleId])
 /******/ 			return installedModules[moduleId].exports;
-/******/
+
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = installedModules[moduleId] = {
 /******/ 			exports: {},
@@ -551,30 +551,30 @@
 /******/ 			parents: hotCurrentParents,
 /******/ 			children: []
 /******/ 		};
-/******/
+
 /******/ 		// Execute the module function
 /******/ 		modules[moduleId].call(module.exports, module, module.exports, hotCreateRequire(moduleId));
-/******/
+
 /******/ 		// Flag the module as loaded
 /******/ 		module.loaded = true;
-/******/
+
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
 /******/ 	}
-/******/
-/******/
+
+
 /******/ 	// expose the modules object (__webpack_modules__)
 /******/ 	__webpack_require__.m = modules;
-/******/
+
 /******/ 	// expose the module cache
 /******/ 	__webpack_require__.c = installedModules;
-/******/
+
 /******/ 	// __webpack_public_path__
 /******/ 	__webpack_require__.p = "/dist";
-/******/
+
 /******/ 	// __webpack_hash__
 /******/ 	__webpack_require__.h = function() { return hotCurrentHash; };
-/******/
+
 /******/ 	// Load entry module and return exports
 /******/ 	return hotCreateRequire(0)(0);
 /******/ })
@@ -584,7 +584,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 	__webpack_require__(5);
-	__webpack_require__(11);
+	__webpack_require__(14);
 	module.exports = __webpack_require__(3);
 
 
@@ -594,11 +594,11 @@
 
 	exports = module.exports = __webpack_require__(4)(undefined);
 	// imports
-	
-	
+
+
 	// module
 	exports.push([module.id, "html,\r\nbody {\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n\r\n* {\r\n    margin: 0;\r\n    padding: 0;\r\n}\r\n\r\nul,\r\nli {\r\n    list-style: none;\r\n}\r\n\r\n.clearfix:after {\r\n    content: \"\";\r\n    display: block;\r\n    height: 0;\r\n    visibility: hidden;\r\n    clear: both;\r\n}\r\n\r\n#example {\r\n    height: 100%;\r\n}\r\n", ""]);
-	
+
 	// exports
 
 
@@ -609,18 +609,18 @@
 	/**
 	 * 兼容IE6-8的版本，有问题请加QQ 370262116 by 司徒正美 Copyright 2017-07-28
 	 */
-	
+
 	(function (global, factory) {
 		 true ? module.exports = factory() :
 		typeof define === 'function' && define.amd ? define(factory) :
 		(global.React = factory());
 	}(this, (function () {
-	
+
 	var __type = Object.prototype.toString;
 	var __push = Array.prototype.push;
-	
+
 	var HTML_KEY = "dangerouslySetInnerHTML";
-	
+
 	/**
 	 * 复制一个对象的属性到另一个对象
 	 *
@@ -642,7 +642,7 @@
 	 * @export
 	 */
 	function noop() {}
-	
+
 	/**
 	 * 类继承
 	 *
@@ -653,15 +653,15 @@
 	function inherit(SubClass, SupClass) {
 	  function Bridge() {}
 	  Bridge.prototype = SupClass.prototype;
-	
+
 	  var fn = SubClass.prototype = new Bridge();
-	
+
 	  // 避免原型链拉长导致方法查找的性能开销
 	  extend(fn, SupClass.prototype);
 	  fn.constructor = SubClass;
 	  return fn;
 	}
-	
+
 	/**
 	 * 收集一个元素的所有孩子
 	 *
@@ -678,7 +678,7 @@
 	  }
 	  return ret;
 	}
-	
+
 	var lowerCache = {};
 	/**
 	 * 小写化的优化
@@ -690,7 +690,7 @@
 	function toLowerCase(s) {
 	  return lowerCache[s] || (lowerCache[s] = s.toLowerCase());
 	}
-	
+
 	/**
 	 *
 	 *
@@ -700,15 +700,15 @@
 	function isFn(obj) {
 	  return typeNumber(obj) === 5;
 	}
-	
+
 	var rword = /[^, ]+/g;
-	
+
 	function oneObject(array, val) {
 	  if (typeNumber(array) === 4) {
 	    array = array.match(rword) || [];
 	  }
 	  var result = {},
-	
+
 	  //eslint-disable-next-line
 	  value = val !== void 666 ? val : 1;
 	  for (var i = 0, n = array.length; i < n; i++) {
@@ -716,7 +716,7 @@
 	  }
 	  return result;
 	}
-	
+
 	function getChildContext(instance, context) {
 	  if (instance.getChildContext) {
 	    return Object.assign({}, context, instance.getChildContext());
@@ -724,7 +724,7 @@
 	  return context;
 	}
 	var rcamelize = /[-_][^-_]/g;
-	
+
 	function camelize(target) {
 	  //提前判断，提高getStyle等的效率
 	  if (!target || target.indexOf("-") < 0 && target.indexOf("_") < 0) {
@@ -735,13 +735,13 @@
 	    return match.charAt(1).toUpperCase();
 	  });
 	}
-	
+
 	var options = {
 	  beforeUnmount: noop,
 	  afterMount: noop,
 	  afterUpdate: noop
 	};
-	
+
 	function checkNull(vnode, type) {
 	  if (Array.isArray(vnode) && vnode.length === 1) {
 	    vnode = vnode[0];
@@ -770,7 +770,7 @@
 	  var a = numberMap[__type.call(data)];
 	  return a || 8;
 	}
-	
+
 	function getComponentProps(vnode) {
 	  var defaultProps = vnode.type.defaultProps;
 	  var props = vnode.props;
@@ -784,15 +784,15 @@
 	  }
 	  return props;
 	}
-	
+
 	var recyclables = {
 	  "#text": [],
 	  "#comment": []
 	};
-	
+
 	var stack = [];
 	var EMPTY_CHILDREN = [];
-	
+
 	var CurrentOwner = {
 	  cur: null
 	};
@@ -804,14 +804,14 @@
 	 * @param {array} ...children
 	 * @returns
 	 */
-	
+
 	function createElement(type, configs) {
 	  var props = {},
 	      key = null,
 	      ref = null,
 	      vtype = 1,
 	      checkProps = 0;
-	
+
 	  for (var i = 2, n = arguments.length; i < n; i++) {
 	    stack.push(arguments[i]);
 	  }
@@ -844,9 +844,9 @@
 	      }
 	    }
 	  }
-	
+
 	  var children = flattenChildren(stack);
-	
+
 	  if (typeNumber(type) === 5) {
 	    //fn
 	    vtype = type.prototype && type.prototype.render ? 2 : 4;
@@ -854,16 +854,16 @@
 	  } else {
 	    props.children = children;
 	  }
-	
+
 	  return new Vnode(type, props, key, ref, vtype, checkProps, CurrentOwner.cur);
 	}
-	
+
 	function flattenChildren(stack) {
 	  var lastText,
 	      child,
 	      deep,
 	      children = [];
-	
+
 	  while (stack.length) {
 	    //比较巧妙地判定是否为子数组
 	    if ((child = stack.pop()) && child.pop) {
@@ -881,7 +881,7 @@
 	      ) {
 	          continue;
 	        }
-	
+
 	      if (childType < 6) {
 	        //!== 'object'
 	        //不是对象就是字符串或数字
@@ -897,7 +897,7 @@
 	      } else {
 	        lastText = null;
 	      }
-	
+
 	      children.unshift(child);
 	    }
 	  }
@@ -906,7 +906,7 @@
 	  }
 	  return children;
 	}
-	
+
 	//fix 0.14对此方法的改动，之前refs里面保存的是虚拟DOM
 	function getDOMNode() {
 	  return this;
@@ -922,7 +922,7 @@
 	  this.type = type;
 	  this.props = props;
 	  this.vtype = vtype;
-	
+
 	  if (key) {
 	    this.key = key;
 	  }
@@ -947,15 +947,15 @@
 	    this._hostParent = null
 	  */
 	}
-	
+
 	Vnode.prototype = {
 	  getDOMNode: function getDOMNode() {
 	    return this._hostNode || null;
 	  },
-	
+
 	  $$typeof: 1
 	};
-	
+
 	function cloneElement(vnode, props) {
 	  if (Array.isArray(vnode)) {
 	    vnode = vnode[0];
@@ -972,14 +972,14 @@
 	  } else if (vnode.ref !== __ref) {
 	    obj.ref = vnode.ref;
 	  }
-	
+
 	  return createElement(vnode.type, Object.assign(obj, vnode.props, props), arguments.length > 2 ? [].slice.call(arguments, 2) : vnode.props.children);
 	}
-	
+
 	if (0 === [1, 2].splice(0).length) {
 	  console.warn("请引入polyfill进行修复");
 	}
-	
+
 	var scheduler = {
 	  list: [],
 	  add: function add(el) {
@@ -1018,14 +1018,14 @@
 	    });
 	  }
 	};
-	
+
 	/**
 	 *组件的基类
 	 *
 	 * @param {any} props
 	 * @param {any} context
 	 */
-	
+
 	function Component(props, context) {
 	  this.context = context;
 	  this.props = props;
@@ -1045,7 +1045,7 @@
 	  this._pendingStates = [];
 	  this.state = {};
 	}
-	
+
 	Component.prototype = {
 	  replaceState: function replaceState() {
 	    console.warn("此方法末实现");
@@ -1058,7 +1058,7 @@
 	    this._forceUpdate = true;
 	    setStateProxy(this, cb);
 	  },
-	
+
 	  _processPendingState: function _processPendingState(props, context) {
 	    var n = this._pendingStates.length;
 	    if (n === 0) {
@@ -1070,13 +1070,13 @@
 	      var partial = states[i];
 	      extend(nextState, isFn(partial) ? partial.call(this, nextState, props, context) : partial);
 	    }
-	
+
 	    return nextState;
 	  },
-	
+
 	  render: function render() {}
 	};
-	
+
 	/**
 	 * 让外面的setState与forceUpdate都共用同一通道
 	 *
@@ -1085,7 +1085,7 @@
 	 * @param {any} cb fire by component did update
 	 * @param {any} force ignore shouldComponentUpdate
 	 */
-	
+
 	function setStateProxy(instance, cb) {
 	  if (isFn(cb)) {
 	    instance._pendingCallbacks.push(cb);
@@ -1102,7 +1102,7 @@
 	    options.refreshComponent(instance);
 	  }
 	}
-	
+
 	var hasOwnProperty = Object.prototype.hasOwnProperty;
 	function shallowEqual(objA, objB) {
 	  if (Object.is(objA, objB)) {
@@ -1117,30 +1117,30 @@
 	  if (keysA.length !== keysB.length) {
 	    return false;
 	  }
-	
+
 	  // Test for A's keys different from B.
 	  for (var i = 0; i < keysA.length; i++) {
 	    if (!hasOwnProperty.call(objB, keysA[i]) || !Object.is(objA[keysA[i]], objB[keysA[i]])) {
 	      return false;
 	    }
 	  }
-	
+
 	  return true;
 	}
-	
+
 	function PureComponent(props, context) {
 	  Component.call(this, props, context);
 	}
-	
+
 	var fn = inherit(PureComponent, Component);
-	
+
 	fn.shouldComponentUpdate = function shallowCompare(nextProps, nextState) {
 	  var a = shallowEqual(this.props, nextProps);
 	  var b = shallowEqual(this.state, nextState);
 	  return !a || !b;
 	};
 	fn.isPureComponent = true;
-	
+
 	var Children = {
 	  only: function only(children) {
 	    return children && children[0] || null;
@@ -1158,7 +1158,7 @@
 	    return children.slice(0);
 	  }
 	};
-	
+
 	//用于后端的元素节点
 	function DOMElement(type) {
 	  this.nodeName = type;
@@ -1173,7 +1173,7 @@
 	    console.log("fire " + name);
 	  };
 	});
-	
+
 	//用于后端的document
 	var fakeDoc = new DOMElement();
 	fakeDoc.createElement = fakeDoc.createElementNS = fakeDoc.createDocumentFragment = function (type) {
@@ -1192,10 +1192,10 @@
 	    document: fakeDoc
 	  };
 	}
-	
-	
+
+
 	var win = w;
-	
+
 	var document = w.document || fakeDoc;
 	var isStandard = "textContent" in document;
 	var fragment = document.createDocumentFragment();
@@ -1208,7 +1208,7 @@
 	    node.removeChild(child);
 	  }
 	}
-	
+
 	function removeDOMElement(node) {
 	  if (node.nodeType === 1) {
 	    if (isStandard) {
@@ -1224,7 +1224,7 @@
 	  fragment.appendChild(node);
 	  fragment.removeChild(node);
 	}
-	
+
 	var versions = {
 	  88: 7, //IE7-8 objectobject
 	  80: 6, //IE6 objectundefined
@@ -1233,9 +1233,9 @@
 	};
 	/* istanbul ignore next  */
 	var msie = document.documentMode || versions[typeNumber(document.all) + "" + typeNumber(XMLHttpRequest)];
-	
+
 	var modern = /NaN|undefined/.test(msie) || msie > 8;
-	
+
 	function createDOMElement(vnode) {
 	  var type = vnode.type;
 	  if (type === "#text") {
@@ -1247,11 +1247,11 @@
 	    }
 	    return document.createTextNode(vnode.text);
 	  }
-	
+
 	  if (type === "#comment") {
 	    return document.createComment(vnode.text);
 	  }
-	
+
 	  try {
 	    if (vnode.ns) {
 	      return document.createElementNS(vnode.ns, type);
@@ -1280,14 +1280,14 @@
 	"marker,pattern,clippath,mask,filter,cursor,view,animate," +
 	// font
 	"font,font-face,glyph,missing-glyph", svgNs);
-	
+
 	var rmathTags = /^m/;
 	var mathNs = "http://www.w3.org/1998/Math/MathML";
 	var svgNs = "http://www.w3.org/2000/svg";
 	var mathTags = {
 	  semantics: mathNs
 	};
-	
+
 	function getNs(type) {
 	  if (svgTags[type]) {
 	    return svgNs;
@@ -1300,7 +1300,7 @@
 	    }
 	  }
 	}
-	
+
 	/**
 	 * 为了兼容0.13之前的版本
 	 */
@@ -1324,7 +1324,7 @@
 	  componentDidUpdate: MANY,
 	  componentWillUnmount: MANY
 	};
-	
+
 	var specHandle = {
 	  displayName: function displayName(Ctor, value, name) {
 	    Ctor[name] = value;
@@ -1336,11 +1336,11 @@
 	      }
 	    }
 	  },
-	
+
 	  propTypes: mergeObject,
 	  childContextTypes: mergeObject,
 	  contextTypes: mergeObject,
-	
+
 	  getDefaultProps: function getDefaultProps(Ctor, value, name) {
 	    if (Ctor[name]) {
 	      Ctor[name] = createMergedResultFunction(Ctor[name], value);
@@ -1351,14 +1351,14 @@
 	  statics: function statics(Ctor, value) {
 	    extend(Ctor, Object(value));
 	  },
-	
+
 	  autobind: noop
 	};
-	
+
 	function mergeObject(fn, value, name) {
 	  fn[name] = Object.assign({}, fn[name], value);
 	}
-	
+
 	//防止覆盖Component内部一些重要的方法或属性
 	var protectedProps = {
 	  mixin: 1,
@@ -1368,7 +1368,7 @@
 	  _pendingCallbacks: 1,
 	  _pendingStates: 1
 	};
-	
+
 	function mixSpecIntoComponent(Ctor, spec) {
 	  if (!spec) {
 	    return;
@@ -1376,14 +1376,14 @@
 	  if (isFn(spec)) {
 	    console.warn("createClass(spec)中的spec不能为函数，只能是纯对象");
 	  }
-	
+
 	  var proto = Ctor.prototype;
 	  var autoBindPairs = proto.__reactAutoBindPairs;
-	
+
 	  if (spec.hasOwnProperty("mixin")) {
 	    specHandle.mixins(Ctor, spec.mixins);
 	  }
-	
+
 	  for (var name in spec) {
 	    if (!spec.hasOwnProperty(name)) {
 	      continue;
@@ -1391,16 +1391,16 @@
 	    if (protectedProps[name] === 1) {
 	      continue;
 	    }
-	
+
 	    var property = spec[name];
 	    var isAlreadyDefined = proto.hasOwnProperty(name);
-	
+
 	    if (specHandle.hasOwnProperty(name)) {
 	      specHandle[name](Ctor, property, name);
 	    } else {
 	      var isReactClassMethod = ReactClassInterface.hasOwnProperty(name);
 	      var shouldAutoBind = isFn(property) && !isReactClassMethod && !isAlreadyDefined && spec.autobind !== false;
-	
+
 	      if (shouldAutoBind) {
 	        autoBindPairs.push(name, property);
 	        proto[name] = property;
@@ -1422,7 +1422,7 @@
 	    }
 	  }
 	}
-	
+
 	function mergeOwnProperties(one, two) {
 	  for (var key in two) {
 	    if (two.hasOwnProperty(key)) {
@@ -1431,7 +1431,7 @@
 	  }
 	  return one;
 	}
-	
+
 	function createMergedResultFunction(one, two) {
 	  return function mergedResult() {
 	    var a = one.apply(this, arguments);
@@ -1447,19 +1447,19 @@
 	    return c;
 	  };
 	}
-	
+
 	function createChainedFunction(one, two) {
 	  return function chainedFunction() {
 	    one.apply(this, arguments);
 	    two.apply(this, arguments);
 	  };
 	}
-	
+
 	function bindAutoBindMethod(component, method) {
 	  var boundMethod = method.bind(component);
 	  return boundMethod;
 	}
-	
+
 	function bindAutoBindMethods(component) {
 	  var pairs = component.__reactAutoBindPairs;
 	  for (var i = 0; i < pairs.length; i += 2) {
@@ -1468,7 +1468,7 @@
 	    component[autoBindKey] = bindAutoBindMethod(component, method);
 	  }
 	}
-	
+
 	//创建一个构造器
 	function newCtor(className) {
 	  var curry = Function("ReactComponent", "bindAutoBindMethods", "return function " + className + "(props, context) {\n    ReactComponent.call(this, props, context);\n    this.state = this.getInitialState ? this.getInitialState() : {};\n    if (this.__reactAutoBindPairs.length) {\n      bindAutoBindMethods(this);\n    }\n  };");
@@ -1484,22 +1484,22 @@
 	  var proto = inherit(Constructor, Component);
 	  proto.__reactAutoBindPairs = [];
 	  delete proto.render;
-	
+
 	  mixSpecIntoComponent(Constructor, spec);
 	  if (isFn(Constructor.getDefaultProps)) {
 	    Constructor.defaultProps = Constructor.getDefaultProps();
 	  }
-	
+
 	  //性能优化，为了防止在原型链进行无用的查找，直接将用户没有定义的生命周期钩子置为null
 	  for (var methodName in ReactClassInterface) {
 	    if (!proto[methodName]) {
 	      proto[methodName] = null;
 	    }
 	  }
-	
+
 	  return Constructor;
 	}
-	
+
 	//为了兼容yo
 	var check = function check() {
 	  return check;
@@ -1522,7 +1522,7 @@
 	  oneOfType: check,
 	  shape: check
 	};
-	
+
 	var rnumber = /^-?\d+(\.\d+)?$/;
 	/**
 	     * 为元素样子设置样式
@@ -1536,7 +1536,7 @@
 	  if (oldStyle === newStyle) {
 	    return;
 	  }
-	
+
 	  for (var name in newStyle) {
 	    var val = newStyle[name];
 	    if (oldStyle[name] !== val) {
@@ -1562,13 +1562,13 @@
 	    }
 	  }
 	}
-	
+
 	var cssNumber = oneObject("animationIterationCount,columnCount,order,flex,flexGrow,flexShrink,fillOpacity,fontWeight,lineHeight,opacity,orphans,widows,zIndex,zoom");
-	
+
 	//var testStyle = document.documentElement.style
 	var prefixes = ["", "-webkit-", "-o-", "-moz-", "-ms-"];
 	var cssMap = oneObject("float", "cssFloat");
-	
+
 	/**
 	 * 转换成当前浏览器可用的样式名
 	 * 
@@ -1588,13 +1588,13 @@
 	  }
 	  return null;
 	}
-	
+
 	var globalEvents = {};
 	var eventPropHooks = {}; //用于在事件回调里对事件对象进行
 	var eventHooks = {}; //用于在元素上绑定特定的事件
 	//根据onXXX得到其全小写的事件名, onClick --> click, onClickCapture --> click,
 	// onMouseMove --> mousemove
-	
+
 	var eventLowerCache = {
 	  onClick: "click",
 	  onChange: "change",
@@ -1611,30 +1611,30 @@
 	  );
 	}
 	var isTouch = "ontouchstart" in document;
-	
+
 	function dispatchEvent(e) {
 	  //__type__ 在injectTapEventPlugin里用到
 	  var bubble = e.__type__ || e.type;
-	
+
 	  e = new SyntheticEvent(e);
-	
+
 	  var hook = eventPropHooks[bubble];
 	  if (hook && false === hook(e)) {
 	    return;
 	  }
-	
+
 	  var paths = collectPaths(e);
-	
+
 	  var captured = bubble + "capture";
-	
+
 	  scheduler.run();
 	  triggerEventFlow(paths, captured, e);
-	
+
 	  if (!e._stopPropagation) {
 	    triggerEventFlow(paths.reverse(), bubble, e);
 	  }
 	}
-	
+
 	function collectPaths(e) {
 	  var target = e.target;
 	  var paths = [];
@@ -1647,7 +1647,7 @@
 	  // target --> parentNode --> body --> html
 	  return paths;
 	}
-	
+
 	function triggerEventFlow(paths, prop, e) {
 	  for (var i = paths.length; i--;) {
 	    var path = paths[i];
@@ -1661,14 +1661,14 @@
 	    }
 	  }
 	}
-	
+
 	function addGlobalEventListener(name) {
 	  if (!globalEvents[name]) {
 	    globalEvents[name] = true;
 	    addEvent(document, name, dispatchEvent);
 	  }
 	}
-	
+
 	function addEvent(el, type, fn, bool) {
 	  if (el.addEventListener) {
 	    // Unable to preventDefault inside passive event listener due to target being
@@ -1680,7 +1680,7 @@
 	    el.attachEvent("on" + type, fn);
 	  }
 	}
-	
+
 	var ron = /^on/;
 	var rcapture = /Capture$/;
 	function getBrowserName(onStr) {
@@ -1702,7 +1702,7 @@
 	  });
 	  document.addEventListener("test", null, opts);
 	} catch (e) {}
-	
+
 	/* IE6-11 chrome mousewheel wheelDetla 下 -120 上 120
 	            firefox DOMMouseScroll detail 下3 上-3
 	            firefox wheel detlaY 下3 上-3
@@ -1722,7 +1722,7 @@
 	    dispatchEvent(e);
 	  });
 	};
-	
+
 	"blur,focus,mouseenter,mouseleave".replace(/\w+/g, function (type) {
 	  eventHooks[type] = function (dom) {
 	    addEvent(dom, type, function (e) {
@@ -1730,12 +1730,12 @@
 	    }, true);
 	  };
 	});
-	
+
 	if (isTouch) {
 	  eventHooks.click = noop;
 	  eventHooks.clickcapture = noop;
 	}
-	
+
 	function SyntheticEvent(event) {
 	  if (event.originalEvent) {
 	    return event;
@@ -1753,7 +1753,7 @@
 	  this.timeStamp = new Date() - 0;
 	  this.originalEvent = event;
 	}
-	
+
 	var eventProto = SyntheticEvent.prototype = {
 	  fixEvent: function fixEvent() {}, //留给以后扩展用
 	  preventDefault: function preventDefault() {
@@ -1780,16 +1780,16 @@
 	  }
 	};
 	/* istanbul ignore next  */
-	
-	
+
+
 	var boolAttributes = oneObject("autofocus,autoplay,async,allowTransparency,checked,controls,declare,disabled,def" + "er,defaultChecked,defaultSelected,isMap,loop,multiple,noHref,noResize,noShade,op" + "en,readOnly,selected", true);
-	
+
 	var builtIdProperties = oneObject("accessKey,bgColor,cellPadding,cellSpacing,codeBase,codeType,colSpan,dateTime,def" + "aultValue,contentEditable,frameBorder,maxLength,marginWidth,marginHeight,rowSpan" + ",tabIndex,useMap,vSpace,valueType,vAlign," + //驼蜂风格
 	"value,id,title,alt,htmlFor,name,type,longDesc,className", 1);
-	
+
 	var booleanTag = oneObject("script,iframe,a,map,video,bgsound,form,select,input,textarea,option,keygen,optgr" + "oup,label");
 	var xlink = "http://www.w3.org/1999/xlink";
-	
+
 	/**
 	 *
 	 * 修改dom的属性与事件
@@ -1820,7 +1820,7 @@
 	    }
 	  }
 	}
-	
+
 	function diffSVGProps(nextProps, lastProps, vnode, lastVnode, dom) {
 	  // http://www.w3school.com.cn/xlink/xlink_reference.asp
 	  // https://facebook.github.io/react/blog/2015/10/07/react-v0.14.html#notable-enh
@@ -1846,14 +1846,14 @@
 	  value: 1,
 	  defaultValue: 1
 	};
-	
+
 	var specialProps = {
 	  children: 1,
 	  style: 1,
 	  className: 1,
 	  dangerouslySetInnerHTML: 1
 	};
-	
+
 	function getHookType(name, val, type, dom) {
 	  if (specialProps[name]) return name;
 	  if (boolAttributes[name] && booleanTag[type]) {
@@ -1867,20 +1867,20 @@
 	  }
 	  return name.indexOf("data-") === 0 || dom[name] === void 666 ? "setAttribute" : "property";
 	}
-	
+
 	function getHookTypeSVG(name, val, type, dom) {
 	  if (name === "className") {
 	    return "svgClass";
 	  }
-	
+
 	  if (specialProps[name]) return name;
-	
+
 	  if (isEventName(name)) {
 	    return "__event__";
 	  }
 	  return "svgAttr";
 	}
-	
+
 	var svgprops = {
 	  xlinkActuate: "xlink:actuate",
 	  xlinkArcrole: "xlink:arcrole",
@@ -1940,7 +1940,7 @@
 	  },
 	  __event__: function __event__(dom, name, val, lastProps) {
 	    var events = dom.__events || (dom.__events = {});
-	
+
 	    if (val === false) {
 	      delete events[toLowerCase(name.slice(2))];
 	    } else {
@@ -1957,7 +1957,7 @@
 	      events[toLowerCase(name.slice(2))] = val;
 	    }
 	  },
-	
+
 	  dangerouslySetInnerHTML: function dangerouslySetInnerHTML(dom, name, val, lastProps) {
 	    var oldhtml = lastProps[name] && lastProps[name].__html;
 	    if (val && val.__html !== oldhtml) {
@@ -1965,7 +1965,7 @@
 	    }
 	  }
 	};
-	
+
 	/**
 	 input, select, textarea这几个元素如果指定了value/checked的**状态属性**，就会包装成受控组件或非受控组件
 	 受控组件是指，用户除了为它指定**状态属性**，还为它指定了onChange/onInput/disabled等用于控制此状态属性
@@ -1989,7 +1989,7 @@
 	    }
 	  }
 	}
-	
+
 	function hasOtherControllProperty(props, keys) {
 	  for (var key in props) {
 	    if (keys[key]) {
@@ -2019,17 +2019,17 @@
 	  "select-one": 3,
 	  "select-multiple": 3
 	};
-	
+
 	function preventUserInput(e) {
 	  var target = e.target;
 	  var name = e.type === "textarea" ? "innerHTML" : "value";
 	  target[name] = target._lastValue;
 	}
-	
+
 	function preventUserClick(e) {
 	  e.preventDefault();
 	}
-	
+
 	function preventUserChange(e) {
 	  var target = e.target;
 	  var value = target._lastValue;
@@ -2040,7 +2040,7 @@
 	    updateOptionsOne(options$$1, options$$1.length, value);
 	  }
 	}
-	
+
 	var duplexData = {
 	  1: ["value", {
 	    onChange: 1,
@@ -2059,7 +2059,7 @@
 	    disabled: 1
 	  }, "onchange", preventUserChange]
 	};
-	
+
 	function postUpdateSelectedOptions(vnode) {
 	  var props = vnode.props,
 	      multiple = !!props.multiple,
@@ -2072,7 +2072,7 @@
 	    updateOptionsOne(options$$1, options$$1.length, value);
 	  }
 	}
-	
+
 	/**
 	 * 收集虚拟DOM select下面的options元素，如果是真实DOM直接用select.options
 	 *
@@ -2091,7 +2091,7 @@
 	    }
 	  }
 	}
-	
+
 	function updateOptionsOne(options$$1, n, propValue) {
 	  var selectedValue = "" + propValue;
 	  for (var i = 0; i < n; i++) {
@@ -2106,7 +2106,7 @@
 	    getOptionSelected(options$$1[0], true);
 	  }
 	}
-	
+
 	function updateOptionsMore(options$$1, n, propValue) {
 	  var selectedValue = {};
 	  try {
@@ -2124,14 +2124,14 @@
 	    getOptionSelected(option, selected);
 	  }
 	}
-	
+
 	function getOptionValue(option, props) {
 	  if (!props) {
 	    return getDOMOptionValue(option);
 	  }
 	  return props.value === undefined ? props.children[0].text : props.value;
 	}
-	
+
 	function getDOMOptionValue(node) {
 	  if (node.hasAttribute && node.hasAttribute("value")) {
 	    return node.getAttribute("value");
@@ -2142,15 +2142,15 @@
 	  }
 	  return node.innerHTML.trim();
 	}
-	
+
 	function getOptionSelected(option, selected) {
 	  var dom = option._hostNode || option;
 	  dom.selected = selected;
 	}
-	
+
 	//innerMap_start
 	var innerMap = win.Map;
-	
+
 	try {
 	  var testNode = document.createComment("");
 	  var map = new innerMap(),
@@ -2168,12 +2168,12 @@
 	      return "Node" + a.uniqueID;
 	    }
 	  };
-	
+
 	  var uniqueID = 1;
 	  innerMap = function innerMap() {
 	    this.map = {};
 	  };
-	
+
 	  innerMap.prototype = {
 	    get: function get(a) {
 	      var id = getID(a);
@@ -2191,7 +2191,7 @@
 	}
 	//innerMap_end
 	var instanceMap = new innerMap();
-	
+
 	function disposeVnode(vnode) {
 	  if (!vnode || vnode._disposed) {
 	    return;
@@ -2212,17 +2212,17 @@
 	  }
 	  vnode._disposed = true;
 	}
-	
+
 	function disposeStateless(vnode) {
 	  if (vnode._instance) {
 	    disposeVnode(vnode._instance._rendered);
 	    vnode._instance = null;
 	  }
 	}
-	
+
 	function disposeElement(vnode) {
 	  var props = vnode.props;
-	
+
 	  var children = props.children;
 	  for (var i = 0, n = children.length; i < n; i++) {
 	    disposeVnode(children[i]);
@@ -2231,7 +2231,7 @@
 	  vnode.ref && vnode.ref(null);
 	  vnode._hostNode = vnode._hostParent = null;
 	}
-	
+
 	function disposeComponent(vnode) {
 	  var instance = vnode._instance;
 	  if (instance) {
@@ -2250,7 +2250,7 @@
 	    disposeVnode(instance._rendered);
 	  }
 	}
-	
+
 	/**
 	 * ReactDOM.render 方法
 	 *
@@ -2281,7 +2281,7 @@
 	function isValidElement(vnode) {
 	  return vnode && vnode.vtype;
 	}
-	
+
 	function renderByAnu(vnode, container, callback, parentContext) {
 	  if (!isValidElement(vnode)) {
 	    throw new Error(vnode + "\u5FC5\u987B\u4E3A\u7EC4\u4EF6\u6216\u5143\u7D20\u8282\u70B9, \u4F46\u73B0\u5728\u4F60\u7684\u7C7B\u578B\u5374\u662F" + Object.prototype.toString.call(vnode));
@@ -2302,23 +2302,23 @@
 	  }
 	  // 如果存在后端渲染的对象（打包进去），那么在ReactDOM.render这个方法里，它就会判定容器的第一个孩子是否元素节点
 	  // 并且它有data-reactroot与data-react-checksum，有就根据数据生成字符串，得到比较数
-	
+
 	  if (rootNode.setAttribute) {
 	    rootNode.setAttribute("data-reactroot", "");
 	  }
-	
+
 	  var instance = vnode._instance;
 	  container._component = vnode;
 	  if (callback) {
 	    callback();
 	  }
-	
+
 	  scheduler.run();
-	
+
 	  return instance || rootNode;
 	  //组件返回组件实例，而普通虚拟DOM 返回元素节点
 	}
-	
+
 	function genVnodes(vnode, container, hostParent, parentContext) {
 	  var nodes = getNodes(container);
 	  var prevRendered = null;
@@ -2331,16 +2331,16 @@
 	    }
 	  }
 	  vnode._hostParent = hostParent;
-	
+
 	  var rootNode = mountVnode(vnode, parentContext, prevRendered);
 	  container.appendChild(rootNode);
-	
+
 	  return rootNode;
 	}
-	
+
 	function mountVnode(vnode, parentContext, prevRendered) {
 	  var vtype = vnode.vtype;
-	
+
 	  switch (vtype) {
 	    case 1:
 	      return mountElement(vnode, parentContext, prevRendered);
@@ -2354,13 +2354,13 @@
 	      return node;
 	  }
 	}
-	
+
 	var formElements = {
 	  select: 1,
 	  textarea: 1,
 	  input: 1
 	};
-	
+
 	function genMountElement(vnode, type, prevRendered) {
 	  if (prevRendered && toLowerCase(prevRendered.nodeName) === type) {
 	    return prevRendered;
@@ -2376,13 +2376,13 @@
 	    return dom;
 	  }
 	}
-	
+
 	function mountElement(vnode, parentContext, prevRendered) {
 	  var type = vnode.type,
 	      props = vnode.props;
-	
+
 	  var dom = genMountElement(vnode, type, prevRendered);
-	
+
 	  vnode._hostNode = dom;
 	  if (prevRendered) {
 	    alignChildren(vnode, dom, parentContext, prevRendered.childNodes);
@@ -2392,7 +2392,7 @@
 	  if (vnode.checkProps) {
 	    diffProps(props, {}, vnode, {}, dom);
 	  }
-	
+
 	  if (vnode.ref) {
 	    scheduler.add(function () {
 	      vnode.ref(dom);
@@ -2401,10 +2401,10 @@
 	  if (formElements[type]) {
 	    processFormElement(vnode, dom, props);
 	  }
-	
+
 	  return dom;
 	}
-	
+
 	//将虚拟DOM转换为真实DOM并插入父元素
 	function mountChildren(vnode, parentNode, parentContext) {
 	  var children = vnode.props.children;
@@ -2412,11 +2412,11 @@
 	    var el = children[i];
 	    el._hostParent = vnode;
 	    var curNode = mountVnode(el, parentContext);
-	
+
 	    parentNode.appendChild(curNode);
 	  }
 	}
-	
+
 	function alignChildren(vnode, parentNode, parentContext, childNodes) {
 	  var children = vnode.props.children,
 	      insertPoint = childNodes[0] || null,
@@ -2430,23 +2430,23 @@
 	      j++;
 	    }
 	    parentNode.insertBefore(dom, insertPoint);
-	
+
 	    insertPoint = dom.nextSibling;
 	  }
 	}
 	function mountComponent(vnode, parentContext, prevRendered) {
 	  var type = vnode.type;
-	
-	
+
+
 	  var props = getComponentProps(vnode);
-	
+
 	  var instance = new type(props, parentContext); //互相持有引用
-	
+
 	  vnode._instance = instance;
 	  instance._currentElement = vnode;
 	  instance.props = instance.props || props;
 	  instance.context = instance.context || parentContext;
-	
+
 	  if (instance.componentWillMount) {
 	    instance._disableSetState = true;
 	    instance.componentWillMount();
@@ -2455,16 +2455,16 @@
 	  } else {
 	    instance.componentWillMount = null;
 	  }
-	
+
 	  // 如果一个虚拟DOM vnode的type为函数，那么对type实例化所得的对象instance来说 instance._currentElement =
 	  // vnode instance有一个render方法，它会生成下一级虚拟DOM ，如果是返回false或null，则变成 空虚拟DOM {type:
 	  // '#comment', text: 'empty'} 这个下一级虚拟DOM，对于instance来说，为其_rendered属性
-	
+
 	  var rendered = safeRenderComponent(instance, type);
-	
+
 	  instance._rendered = rendered;
 	  rendered._hostParent = vnode._hostParent;
-	
+
 	  var dom = mountVnode(rendered, getChildContext(instance, parentContext), prevRendered);
 	  instanceMap.set(instance, dom);
 	  vnode._hostNode = dom;
@@ -2478,7 +2478,7 @@
 	      scheduler.add(instance);
 	    }
 	  }
-	
+
 	  if (vnode.ref) {
 	    scheduler.add(function () {
 	      vnode.ref(instance);
@@ -2488,64 +2488,64 @@
 	  vnode._hostNode = dom;
 	  return dom;
 	}
-	
+
 	function safeRenderComponent(instance, type) {
 	  CurrentOwner.cur = instance;
 	  var rendered = instance.render();
 	  rendered = checkNull(rendered, type);
-	
+
 	  CurrentOwner.cur = null;
 	  return rendered;
 	}
-	
+
 	function mountStateless(vnode, parentContext, prevRendered) {
 	  var props = getComponentProps(vnode);
-	
+
 	  var rendered = vnode.type(props, parentContext);
 	  rendered = checkNull(rendered, vnode.type);
-	
+
 	  var dom = mountVnode(rendered, parentContext, prevRendered);
 	  vnode._instance = {
 	    _currentElement: vnode,
 	    _rendered: rendered
 	  };
 	  vnode._hostNode = dom;
-	
+
 	  rendered._hostParent = vnode._hostParent;
 	  return dom;
 	}
-	
+
 	function updateStateless(lastVnode, nextVnode, node, parentContext) {
 	  var instance = lastVnode._instance;
 	  var vnode = instance._rendered;
-	
+
 	  var newVnode = nextVnode.type(getComponentProps(nextVnode), parentContext);
 	  newVnode = checkNull(newVnode, nextVnode.type);
-	
+
 	  var dom = alignVnodes(vnode, newVnode, node, parentContext);
 	  nextVnode._instance = instance;
 	  instance._rendered = newVnode;
 	  nextVnode._hostNode = dom;
 	  return dom;
 	}
-	
+
 	function refreshComponent(instance) {
 	  //这里触发视图更新
-	
+
 	  reRenderComponent(instance);
-	
+
 	  instance._forceUpdate = false;
 	  instance._pendingCallbacks.splice(0).forEach(function (fn) {
 	    fn.call(instance);
 	  });
 	}
-	
+
 	//将Component中这个东西移动这里
 	options.refreshComponent = refreshComponent;
-	
+
 	function reRenderComponent(instance) {
 	  var node = instanceMap.get(instance);
-	
+
 	  if (!instance._hasDidMount) {
 	    scheduler.addAndRun(function () {
 	      instance._forceUpdate = false;
@@ -2553,7 +2553,7 @@
 	        fn.call(instance);
 	      });
 	    });
-	
+
 	    return node;
 	  }
 	  var props = instance.props,
@@ -2561,44 +2561,44 @@
 	      context = instance.context,
 	      lastProps = instance.lastProps,
 	      constructor = instance.constructor;
-	
-	
+
+
 	  var lastRendered = instance._rendered;
 	  var hostParent = lastRendered._hostParent;
 	  var nextProps = props;
 	  lastProps = lastProps || props;
 	  var nextState = instance._processPendingState(props, context);
-	
+
 	  instance.props = lastProps;
 	  //防止用户在shouldComponentUpdate中调用setState
 	  instance._disableSetState = true;
-	
+
 	  if (!instance._forceUpdate && instance.shouldComponentUpdate && instance.shouldComponentUpdate(nextProps, nextState, context) === false) {
 	    instance._disableSetState = false;
 	    return node;
 	  }
-	
+
 	  //生命周期 componentWillUpdate(nextProps, nextState, nextContext)
 	  if (instance.componentWillUpdate) {
 	    instance.componentWillUpdate(nextProps, nextState, context);
 	  } else {
 	    instance.componentWillUpdate = null;
 	  }
-	
+
 	  instance.props = nextProps;
 	  instance.state = nextState;
 	  instance._updating = true;
 	  var rendered = safeRenderComponent(instance, constructor);
-	
+
 	  var childContext = getChildContext(instance, context);
 	  instance._rendered = rendered;
 	  rendered._hostParent = hostParent;
-	
+
 	  var dom = alignVnodes(lastRendered, rendered, node, childContext);
 	  instanceMap.set(instance, dom);
 	  instance._currentElement._hostNode = dom;
 	  instance._updating = false;
-	
+
 	  if (instance.componentDidUpdate) {
 	    instance.componentDidUpdate(lastProps, state, context);
 	  } else {
@@ -2608,7 +2608,7 @@
 	  instance._disableSetState = false;
 	  return dom;
 	}
-	
+
 	function alignVnodes(vnode, newVnode, node, parentContext) {
 	  var newNode = node;
 	  //eslint-disable-next-line
@@ -2628,10 +2628,10 @@
 	    // same type and same key -> update
 	    newNode = updateVnode(vnode, newVnode, node, parentContext);
 	  }
-	
+
 	  return newNode;
 	}
-	
+
 	function findDOMNode(componentOrElement) {
 	  if (componentOrElement == null) {
 	    return null;
@@ -2639,10 +2639,10 @@
 	  if (componentOrElement.nodeType === 1) {
 	    return componentOrElement;
 	  }
-	
+
 	  return instanceMap.get(componentOrElement) || null;
 	}
-	
+
 	function updateVnode(lastVnode, nextVnode, node, parentContext) {
 	  switch (lastVnode.vtype) {
 	    case 1:
@@ -2691,26 +2691,26 @@
 	  }
 	  return dom;
 	}
-	
+
 	function updateComponent(lastVnode, nextVnode, node, parentContext) {
 	  var instance = nextVnode._instance = lastVnode._instance;
 	  if (!instance) {
 	    lastVnode._return = lastVnode._disposed = true;
 	    var dom = mountComponent(nextVnode, parentContext);
 	    node.parentNode && node.parentNode.replaceChild(dom, node);
-	
+
 	    return dom;
 	  }
-	
+
 	  var nextProps = getComponentProps(nextVnode);
 	  instance.lastProps = instance.props;
-	
+
 	  if (instance.componentWillReceiveProps) {
 	    instance._disableSetState = true;
 	    instance.componentWillReceiveProps(nextProps, parentContext);
 	    instance._disableSetState = false;
 	  }
-	
+
 	  instance.props = nextProps;
 	  instance.context = parentContext;
 	  if (nextVnode.ref) {
@@ -2718,7 +2718,7 @@
 	  }
 	  return reRenderComponent(instance);
 	}
-	
+
 	function updateChildren(vnode, newVnode, node, parentContext) {
 	  var patches = {
 	    removes: [],
@@ -2731,14 +2731,14 @@
 	  patches.creates.forEach(applyCreate);
 	  scheduler.run();
 	}
-	
+
 	function diffChildren(patches, vnode, newVnode, node, parentContext) {
 	  var children = vnode.props.children;
 	  var childNodes = node.childNodes;
 	  var newVchildren = newVnode.props.children;
 	  var childrenLen = children.length;
 	  var newVchildrenLen = newVchildren.length;
-	
+
 	  if (childrenLen === 0) {
 	    if (newVchildrenLen > 0) {
 	      for (var i = 0; i < newVchildrenLen; i++) {
@@ -2783,7 +2783,7 @@
 	      }
 	    }
 	  }
-	
+
 	  // isSimilar
 	  for (var _i3 = 0; _i3 < childrenLen; _i3++) {
 	    var _vnode2 = cloneChildren[_i3];
@@ -2812,7 +2812,7 @@
 	      removes.push({ vnode: _vnode2, node: childNodes[_i3] });
 	    }
 	  }
-	
+
 	  for (var _i4 = 0; _i4 < newVchildrenLen; _i4++) {
 	    var item = updates[_i4];
 	    if (!item) {
@@ -2834,7 +2834,7 @@
 	  }
 	  __push.apply(patches.updates, updates);
 	}
-	
+
 	function applyUpdate(data) {
 	  if (!data) {
 	    return;
@@ -2842,7 +2842,7 @@
 	  var vnode = data.vnode;
 	  var nextVnode = data.newVnode;
 	  var dom = data.node;
-	
+
 	  // update
 	  if (!data.shouldIgnore) {
 	    if (!vnode.vtype) {
@@ -2875,7 +2875,7 @@
 	  }
 	  return dom;
 	}
-	
+
 	function applyDestroy(data) {
 	  var node = data.node;
 	  if (node) {
@@ -2883,18 +2883,18 @@
 	  }
 	  disposeVnode(data.vnode);
 	}
-	
+
 	function applyCreate(data) {
 	  var node = mountVnode(data.vnode, data.parentContext);
 	  data.parentNode.insertBefore(node, data.parentNode.childNodes[data.index]);
 	}
-	
+
 	function fireEvent(e, type, dom) {
 	  e = new SyntheticEvent(e);
 	  e.type = type;
 	  dispatchEvent(e);
 	}
-	
+
 	//Ie6-8 oninput使用propertychange进行冒充，触发一个ondatasetchanged事件
 	function fixIEInputHandle(e) {
 	  if (e.propertyName === "value") {
@@ -2904,7 +2904,7 @@
 	function fixIEInput(dom, name) {
 	  addEvent(dom, "propertychange", fixIEInputHandle);
 	}
-	
+
 	function fixIEChangeHandle(e) {
 	  var dom = e.srcElement;
 	  if (dom.type === "select-one") {
@@ -2918,7 +2918,7 @@
 	      dom.value = attr && attr.specified ? option.value : option.text;
 	    }
 	  }
-	
+
 	  fireEvent(e, "change");
 	}
 	function fixIEChange(dom, name) {
@@ -2926,13 +2926,13 @@
 	  var eventType = dom.type === "radio" || dom.type === "checkbox" ? "click" : "change";
 	  addEvent(dom, eventType, fixIEChangeHandle);
 	}
-	
+
 	function fixIESubmit(dom, name) {
 	  if (dom.nodeName === "FORM") {
 	    addEvent(dom, "submit", dispatchEvent);
 	  }
 	}
-	
+
 	if (msie < 9) {
 	  String("focus,blur").replace(/\w+/g, function (type) {
 	    eventHooks[type] = function (dom) {
@@ -2942,7 +2942,7 @@
 	      });
 	    };
 	  });
-	
+
 	  String("mouseenter,mouseleave").replace(/\w+/g, function (type) {
 	    eventHooks[type] = function (dom) {
 	      var eventType = type === "mouseenter" ? "mouseover" : "mouseout";
@@ -2954,7 +2954,7 @@
 	      });
 	    };
 	  });
-	
+
 	  Object.assign(eventPropHooks, oneObject("mousemove, mouseout,mouseenter, mouseleave, mouseout,mousewheel, mousewheel, whe" + "el, click", function (event) {
 	    if (!("pageX" in event)) {
 	      var doc = event.target.ownerDocument || document;
@@ -2963,7 +2963,7 @@
 	      event.pageY = event.clientY + (box.scrollTop >> 0) - (box.clientTop >> 0);
 	    }
 	  }));
-	
+
 	  Object.assign(eventPropHooks, oneObject("keyup, keydown, keypress", function (event) {
 	    /* istanbul ignore next  */
 	    if (event.which == null && event.type.indexOf("key") === 0) {
@@ -2971,7 +2971,7 @@
 	      event.which = event.charCode != null ? event.charCode : event.keyCode;
 	    }
 	  }));
-	
+
 	  //IE8中select.value不会在onchange事件中随用户的选中而改变其value值，也不让用户直接修改value 只能通过这个hack改变
 	  try {
 	    Object.defineProperty(HTMLSelectElement.prototype, "value", {
@@ -2989,7 +2989,7 @@
 	  eventHooks.changecapture = fixIEChange;
 	  eventHooks.submit = fixIESubmit;
 	}
-	
+
 	var React = {
 	  version: "1.0.7",
 	  PropTypes: PropTypes,
@@ -3012,11 +3012,11 @@
 	    return factory;
 	  }
 	};
-	
+
 	win.ReactDOM = React;
-	
+
 	return React;
-	
+
 	})));
 
 
@@ -3024,10 +3024,12 @@
 /* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var styles = __webpack_require__(9);
+	'use strict';
+
+	var styles = __webpack_require__(13);
 	var React = __webpack_require__(2);
 	var ReactDOM = __webpack_require__(2);
-	
+
 	var App = function App() {
 	    return React.createElement(
 	        'div',
@@ -3039,7 +3041,7 @@
 	        )
 	    );
 	};
-	
+
 	window.onload = function () {
 	    window.s = ReactDOM.render(React.createElement(App, null), document.getElementById('example'));
 	};
@@ -3055,7 +3057,7 @@
 	// css base code, injected by the css-loader
 	module.exports = function(useSourceMap) {
 		var list = [];
-	
+
 		// return the list of modules as css string
 		list.toString = function toString() {
 			return this.map(function (item) {
@@ -3067,7 +3069,7 @@
 				}
 			}).join("");
 		};
-	
+
 		// import a list of modules into the list
 		list.i = function(modules, mediaQuery) {
 			if(typeof modules === "string")
@@ -3096,32 +3098,32 @@
 		};
 		return list;
 	};
-	
+
 	function cssWithMappingToString(item, useSourceMap) {
 		var content = item[1] || '';
 		var cssMapping = item[3];
 		if (!cssMapping) {
 			return content;
 		}
-	
+
 		if (useSourceMap && typeof btoa === 'function') {
 			var sourceMapping = toComment(cssMapping);
 			var sourceURLs = cssMapping.sources.map(function (source) {
 				return '/*# sourceURL=' + cssMapping.sourceRoot + source + ' */'
 			});
-	
+
 			return [content].concat(sourceURLs).concat([sourceMapping]).join('\n');
 		}
-	
+
 		return [content].join('\n');
 	}
-	
+
 	// Adapted from convert-source-map (MIT)
 	function toComment(sourceMap) {
 		// eslint-disable-next-line no-undef
 		var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));
 		var data = 'sourceMappingURL=data:application/json;charset=utf-8;base64,' + base64;
-	
+
 		return '/*# ' + data + ' */';
 	}
 
@@ -3141,11 +3143,11 @@
 	   * Supported by sc AmvTek srl
 	   * :email: devel@amvtek.com
 	 */
-	
-	
+
+
 	var PolyfillEventSource = __webpack_require__(6).EventSource;
 	module.exports = PolyfillEventSource;
-	
+
 	// Add EventSource to window if it is missing...
 	if (window && !window.EventSource){
 	    window.EventSource = PolyfillEventSource;
@@ -3165,125 +3167,125 @@
 	   * :email: devel@amvtek.com
 	 */
 	;(function (global) {
-	
+
 	    if (global.EventSource && !global._eventSourceImportPrefix){
 	        return;
 	    }
-	
+
 	    var evsImportName = (global._eventSourceImportPrefix||'')+"EventSource";
-	
+
 	    var EventSource = function (url, options) {
-	
+
 	        if (!url || typeof url != 'string') {
 	            throw new SyntaxError('Not enough arguments');
 	        }
-	
+
 	        this.URL = url;
 	        this.setOptions(options);
 	        var evs = this;
 	        setTimeout(function(){evs.poll()}, 0);
 	    };
-	
+
 	    EventSource.prototype = {
-	
+
 	        CONNECTING: 0,
-	
+
 	        OPEN: 1,
-	
+
 	        CLOSED: 2,
-	
+
 	        defaultOptions: {
-	
+
 	            loggingEnabled: false,
-	
+
 	            loggingPrefix: "eventsource",
-	
+
 	            interval: 500, // milliseconds
-	
+
 	            bufferSizeLimit: 256*1024, // bytes
-	
+
 	            silentTimeout: 300000, // milliseconds
-	
+
 	            getArgs:{
 	                'evs_buffer_size_limit': 256*1024
 	            },
-	
+
 	            xhrHeaders:{
 	                'Accept': 'text/event-stream',
 	                'Cache-Control': 'no-cache',
 	                'X-Requested-With': 'XMLHttpRequest'
 	            }
 	        },
-	
+
 	        setOptions: function(options){
-	
+
 	            var defaults = this.defaultOptions;
 	            var option;
-	
+
 	            // set all default options...
 	            for (option in defaults){
-	
+
 	                if ( defaults.hasOwnProperty(option) ){
 	                    this[option] = defaults[option];
 	                }
 	            }
-	
+
 	            // override with what is in options
 	            for (option in options){
-	
+
 	                if (option in defaults && options.hasOwnProperty(option)){
 	                    this[option] = options[option];
 	                }
 	            }
-	
+
 	            // if getArgs option is enabled
 	            // ensure evs_buffer_size_limit corresponds to bufferSizeLimit
 	            if (this.getArgs && this.bufferSizeLimit) {
-	
+
 	                this.getArgs['evs_buffer_size_limit'] = this.bufferSizeLimit;
 	            }
-	
+
 	            // if console is not available, force loggingEnabled to false
 	            if (typeof console === "undefined" || typeof console.log === "undefined") {
-	
+
 	                this.loggingEnabled = false;
 	            }
 	        },
-	
+
 	        log: function(message) {
-	
+
 	            if (this.loggingEnabled) {
-	
+
 	                console.log("[" + this.loggingPrefix +"]:" + message)
 	            }
 	        },
-	
+
 	        poll: function() {
-	
+
 	            try {
-	
+
 	                if (this.readyState == this.CLOSED) {
 	                    return;
 	                }
-	
+
 	                this.cleanup();
 	                this.readyState = this.CONNECTING;
 	                this.cursor = 0;
 	                this.cache = '';
 	                this._xhr = new this.XHR(this);
 	                this.resetNoActivityTimer();
-	
+
 	            }
 	            catch (e) {
-	
+
 	                // in an attempt to silence the errors
 	                this.log('There were errors inside the pool try-catch');
 	                this.dispatchEvent('error', { type: 'error', data: e.message });
 	            }
 	        },
-	
+
 	        pollAgain: function (interval) {
-	
+
 	            // schedule poll to be called after interval milliseconds
 	            var evs = this;
 	            evs.readyState = evs.CONNECTING;
@@ -3293,32 +3295,32 @@
 	            });
 	            this._pollTimer = setTimeout(function(){evs.poll()}, interval||0);
 	        },
-	
-	
+
+
 	        cleanup: function() {
-	
+
 	            this.log('evs cleaning up')
-	
+
 	            if (this._pollTimer){
 	                clearInterval(this._pollTimer);
 	                this._pollTimer = null;
 	            }
-	
+
 	            if (this._noActivityTimer){
 	                clearInterval(this._noActivityTimer);
 	                this._noActivityTimer = null;
 	            }
-	
+
 	            if (this._xhr){
 	                this._xhr.abort();
 	                this._xhr = null;
 	            }
 	        },
-	
+
 	        resetNoActivityTimer: function(){
-	
+
 	            if (this.silentTimeout){
-	
+
 	                if (this._noActivityTimer){
 	                    clearInterval(this._noActivityTimer);
 	                }
@@ -3329,52 +3331,52 @@
 	                        );
 	            }
 	        },
-	
+
 	        close: function () {
-	
+
 	            this.readyState = this.CLOSED;
 	            this.log('Closing connection. readyState: '+this.readyState);
 	            this.cleanup();
 	        },
-	
+
 	        ondata: function() {
-	
+
 	            var request = this._xhr;
-	
+
 	            if (request.isReady() && !request.hasError() ) {
 	                // reset the timer, as we have activity
 	                this.resetNoActivityTimer();
-	
+
 	                // move this EventSource to OPEN state...
 	                if (this.readyState == this.CONNECTING) {
 	                    this.readyState = this.OPEN;
 	                    this.dispatchEvent('open', { type: 'open' });
 	                }
-	
+
 	                var buffer = request.getBuffer();
-	
+
 	                if (buffer.length > this.bufferSizeLimit) {
 	                    this.log('buffer.length > this.bufferSizeLimit');
 	                    this.pollAgain();
 	                }
-	
+
 	                if (this.cursor == 0 && buffer.length > 0){
-	
+
 	                    // skip byte order mark \uFEFF character if it starts the stream
 	                    if (buffer.substring(0,1) == '\uFEFF'){
 	                        this.cursor = 1;
 	                    }
 	                }
-	
+
 	                var lastMessageIndex = this.lastMessageIndex(buffer);
 	                if (lastMessageIndex[0] >= this.cursor){
-	
+
 	                    var newcursor = lastMessageIndex[1];
 	                    var toparse = buffer.substring(this.cursor, newcursor);
 	                    this.parseStream(toparse);
 	                    this.cursor = newcursor;
 	                }
-	
+
 	                // if request is finished, reopen the connection
 	                if (request.isDone()) {
 	                    this.log('request.isDone(). reopening the connection');
@@ -3382,93 +3384,93 @@
 	                }
 	            }
 	            else if (this.readyState !== this.CLOSED) {
-	
+
 	                this.log('this.readyState !== this.CLOSED');
 	                this.pollAgain(this.interval);
-	
+
 	                //MV: Unsure why an error was previously dispatched
 	            }
 	        },
-	
+
 	        parseStream: function(chunk) {
-	
+
 	            // normalize line separators (\r\n,\r,\n) to \n
 	            // remove white spaces that may precede \n
 	            chunk = this.cache + this.normalizeToLF(chunk);
-	
+
 	            var events = chunk.split('\n\n');
-	
+
 	            var i, j, eventType, datas, line, retry;
-	
+
 	            for (i=0; i < (events.length - 1); i++) {
-	
+
 	                eventType = 'message';
 	                datas = [];
 	                parts = events[i].split('\n');
-	
+
 	                for (j=0; j < parts.length; j++) {
-	
+
 	                    line = this.trimWhiteSpace(parts[j]);
-	
+
 	                    if (line.indexOf('event') == 0) {
-	
+
 	                        eventType = line.replace(/event:?\s*/, '');
 	                    }
 	                    else if (line.indexOf('retry') == 0) {
-	
+
 	                        retry = parseInt(line.replace(/retry:?\s*/, ''));
 	                        if(!isNaN(retry)) {
 	                            this.interval = retry;
 	                        }
 	                    }
 	                    else if (line.indexOf('data') == 0) {
-	
+
 	                        datas.push(line.replace(/data:?\s*/, ''));
 	                    }
 	                    else if (line.indexOf('id:') == 0) {
-	
+
 	                        this.lastEventId = line.replace(/id:?\s*/, '');
 	                    }
 	                    else if (line.indexOf('id') == 0) { // this resets the id
-	
+
 	                        this.lastEventId = null;
 	                    }
 	                }
-	
+
 	                if (datas.length) {
 	                    // dispatch a new event
 	                    var event = new MessageEvent(eventType, datas.join('\n'), window.location.origin, this.lastEventId);
 	                    this.dispatchEvent(eventType, event);
 	                }
 	            }
-	
+
 	            this.cache = events[events.length - 1];
 	        },
-	
+
 	        dispatchEvent: function (type, event) {
 	            var handlers = this['_' + type + 'Handlers'];
-	
+
 	            if (handlers) {
-	
+
 	                for (var i = 0; i < handlers.length; i++) {
 	                    handlers[i].call(this, event);
 	                }
 	            }
-	
+
 	            if (this['on' + type]) {
 	                this['on' + type].call(this, event);
 	            }
-	
+
 	        },
-	
+
 	        addEventListener: function (type, handler) {
 	            if (!this['_' + type + 'Handlers']) {
 	                this['_' + type + 'Handlers'] = [];
 	            }
-	
+
 	            this['_' + type + 'Handlers'].push(handler);
 	        },
-	
+
 	        removeEventListener: function (type, handler) {
 	            var handlers = this['_' + type + 'Handlers'];
 	            if (!handlers) {
@@ -3481,40 +3483,40 @@
 	                }
 	            }
 	        },
-	
+
 	        _pollTimer: null,
-	
+
 	        _noactivityTimer: null,
-	
+
 	        _xhr: null,
-	
+
 	        lastEventId: null,
-	
+
 	        cache: '',
-	
+
 	        cursor: 0,
-	
+
 	        onerror: null,
-	
+
 	        onmessage: null,
-	
+
 	        onopen: null,
-	
+
 	        readyState: 0,
-	
+
 	        // ===================================================================
 	        // helpers functions
 	        // those are attached to prototype to ease reuse and testing...
-	
+
 	        urlWithParams: function (baseURL, params) {
-	
+
 	            var encodedArgs = [];
-	
+
 	            if (params){
-	
+
 	                var key, urlarg;
 	                var urlize = encodeURIComponent;
-	
+
 	                for (key in params){
 	                    if (params.hasOwnProperty(key)) {
 	                        urlarg = urlize(key)+'='+urlize(params[key]);
@@ -3522,54 +3524,54 @@
 	                    }
 	                }
 	            }
-	
+
 	            if (encodedArgs.length > 0){
-	
+
 	                if (baseURL.indexOf('?') == -1)
 	                    return baseURL + '?' + encodedArgs.join('&');
 	                return baseURL + '&' + encodedArgs.join('&');
 	            }
 	            return baseURL;
 	        },
-	
+
 	        lastMessageIndex: function(text) {
-	
+
 	            var ln2 =text.lastIndexOf('\n\n');
 	            var lr2 = text.lastIndexOf('\r\r');
 	            var lrln2 = text.lastIndexOf('\r\n\r\n');
-	
+
 	            if (lrln2 > Math.max(ln2, lr2)) {
 	                return [lrln2, lrln2+4];
 	            }
 	            return [Math.max(ln2, lr2), Math.max(ln2, lr2) + 2]
 	        },
-	
+
 	        trimWhiteSpace: function(str) {
 	            // to remove whitespaces left and right of string
-	
+
 	            var reTrim = /^(\s|\u00A0)+|(\s|\u00A0)+$/g;
 	            return str.replace(reTrim, '');
 	        },
-	
+
 	        normalizeToLF: function(str) {
-	
+
 	            // replace \r and \r\n with \n
 	            return str.replace(/\r\n|\r/g, '\n');
 	        }
-	
+
 	    };
-	
+
 	    if (!isOldIE()){
-	
+
 	        EventSource.isPolyfill = "XHR";
-	
+
 	        // EventSource will send request using XMLHttpRequest
 	        EventSource.prototype.XHR = function(evs) {
-	
+
 	            request = new XMLHttpRequest();
 	            this._request = request;
 	            evs._xhr = this;
-	
+
 	            // set handlers
 	            request.onreadystatechange = function(){
 	                if (request.readyState > 1 && evs.readyState != evs.CLOSED) {
@@ -3587,12 +3589,12 @@
 	                    }
 	                }
 	            };
-	
+
 	            request.onprogress = function () {
 	            };
-	
+
 	            request.open('GET', evs.urlWithParams(evs.URL, evs.getArgs), true);
-	
+
 	            var headers = evs.xhrHeaders; // maybe null
 	            for (var header in headers) {
 	                if (headers.hasOwnProperty(header)){
@@ -3602,36 +3604,36 @@
 	            if (evs.lastEventId) {
 	                request.setRequestHeader('Last-Event-Id', evs.lastEventId);
 	            }
-	
+
 	            request.send();
 	        };
-	
+
 	        EventSource.prototype.XHR.prototype = {
-	
+
 	            useXDomainRequest: false,
-	
+
 	            _request: null,
-	
+
 	            _failed: false, // true if we have had errors...
-	
+
 	            isReady: function() {
-	
-	
+
+
 	                return this._request.readyState >= 2;
 	            },
-	
+
 	            isDone: function() {
-	
+
 	                return (this._request.readyState == 4);
 	            },
-	
+
 	            hasError: function() {
-	
+
 	                return (this._failed || (this._request.status >= 400));
 	            },
-	
+
 	            getBuffer: function() {
-	
+
 	                var rv = '';
 	                try {
 	                    rv = this._request.responseText || '';
@@ -3639,9 +3641,9 @@
 	                catch (e){}
 	                return rv;
 	            },
-	
+
 	            abort: function() {
-	
+
 	                if ( this._request ) {
 	                    this._request.abort();
 	                }
@@ -3649,31 +3651,31 @@
 	        };
 	    }
 	    else {
-	
+
 		EventSource.isPolyfill = "IE_8-9";
-	
+
 	        // patch EventSource defaultOptions
 	        var defaults = EventSource.prototype.defaultOptions;
 	        defaults.xhrHeaders = null; // no headers will be sent
 	        defaults.getArgs['evs_preamble'] = 2048 + 8;
-	
+
 	        // EventSource will send request using Internet Explorer XDomainRequest
 	        EventSource.prototype.XHR = function(evs) {
-	
+
 	            request = new XDomainRequest();
 	            this._request = request;
-	
+
 	            // set handlers
 	            request.onprogress = function(){
 	                request._ready = true;
 	                evs.ondata();
 	            };
-	
+
 	            request.onload = function(){
 	                this._loaded = true;
 	                evs.ondata();
 	            };
-	
+
 	            request.onerror = function(){
 	                this._failed = true;
 	                evs.readyState = evs.CLOSED;
@@ -3682,7 +3684,7 @@
 	                    data: "XDomainRequest error"
 	                });
 	            };
-	
+
 	            request.ontimeout = function(){
 	                this._failed = true;
 	                evs.readyState = evs.CLOSED;
@@ -3691,13 +3693,13 @@
 	                    data: "XDomainRequest timed out"
 	                });
 	            };
-	
+
 	            // XDomainRequest does not allow setting custom headers
 	            // If EventSource has enabled the use of GET arguments
 	            // we add parameters to URL so that server can adapt the stream...
 	            var reqGetArgs = {};
 	            if (evs.getArgs) {
-	
+
 	                // copy evs.getArgs in reqGetArgs
 	                var defaultArgs = evs.getArgs;
 	                    for (var key in defaultArgs) {
@@ -3710,40 +3712,40 @@
 	                }
 	            }
 	            // send the request
-	
+
 	            request.open('GET', evs.urlWithParams(evs.URL,reqGetArgs));
 	            request.send();
 	        };
-	
+
 	        EventSource.prototype.XHR.prototype = {
-	
+
 	            useXDomainRequest: true,
-	
+
 	            _request: null,
-	
+
 	            _ready: false, // true when progress events are dispatched
-	
+
 	            _loaded: false, // true when request has been loaded
-	
+
 	            _failed: false, // true if when request is in error
-	
+
 	            isReady: function() {
-	
+
 	                return this._request._ready;
 	            },
-	
+
 	            isDone: function() {
-	
+
 	                return this._request._loaded;
 	            },
-	
+
 	            hasError: function() {
-	
+
 	                return this._request._failed;
 	            },
-	
+
 	            getBuffer: function() {
-	
+
 	                var rv = '';
 	                try {
 	                    rv = this._request.responseText || '';
@@ -3751,18 +3753,18 @@
 	                catch (e){}
 	                return rv;
 	            },
-	
+
 	            abort: function() {
-	
+
 	                if ( this._request){
 	                    this._request.abort();
 	                }
 	            }
 	        };
 	    }
-	
+
 	    function MessageEvent(type, data, origin, lastEventId) {
-	
+
 	        this.bubbles = false;
 	        this.cancelBubble = false;
 	        this.cancelable = false;
@@ -3771,13 +3773,13 @@
 	        this.lastEventId = lastEventId || '';
 	        this.type = type || 'message';
 	    }
-	
+
 	    function isOldIE () {
-	
+
 	        //return true if we are in IE8 or IE9
 	        return (window.XDomainRequest && (window.XMLHttpRequest && new XMLHttpRequest().responseType === undefined)) ? true : false;
 	    }
-	
+
 	    global[evsImportName] = EventSource;
 	})(this);
 
@@ -3808,25 +3810,25 @@
 		singletonCounter = 0,
 		styleElementsInsertedAtTop = [],
 		fixUrls = __webpack_require__(8);
-	
+
 	module.exports = function(list, options) {
 		if(false) {
 			if(typeof document !== "object") throw new Error("The style-loader cannot be used in a non-browser environment");
 		}
-	
+
 		options = options || {};
 		options.attrs = typeof options.attrs === "object" ? options.attrs : {};
-	
+
 		// Force single-tag solution on IE6-9, which has a hard limit on the # of <style>
 		// tags it will allow on a page
 		if (typeof options.singleton === "undefined") options.singleton = isOldIE();
-	
+
 		// By default, add <style> tags to the bottom of <head>.
 		if (typeof options.insertAt === "undefined") options.insertAt = "bottom";
-	
+
 		var styles = listToStyles(list);
 		addStylesToDom(styles, options);
-	
+
 		return function update(newList) {
 			var mayRemove = [];
 			for(var i = 0; i < styles.length; i++) {
@@ -3849,7 +3851,7 @@
 			}
 		};
 	};
-	
+
 	function addStylesToDom(styles, options) {
 		for(var i = 0; i < styles.length; i++) {
 			var item = styles[i];
@@ -3871,7 +3873,7 @@
 			}
 		}
 	}
-	
+
 	function listToStyles(list) {
 		var styles = [];
 		var newStyles = {};
@@ -3889,7 +3891,7 @@
 		}
 		return styles;
 	}
-	
+
 	function insertStyleElement(options, styleElement) {
 		var head = getHeadElement();
 		var lastStyleElementInsertedAtTop = styleElementsInsertedAtTop[styleElementsInsertedAtTop.length - 1];
@@ -3908,7 +3910,7 @@
 			throw new Error("Invalid value for parameter 'insertAt'. Must be 'top' or 'bottom'.");
 		}
 	}
-	
+
 	function removeStyleElement(styleElement) {
 		styleElement.parentNode.removeChild(styleElement);
 		var idx = styleElementsInsertedAtTop.indexOf(styleElement);
@@ -3916,35 +3918,35 @@
 			styleElementsInsertedAtTop.splice(idx, 1);
 		}
 	}
-	
+
 	function createStyleElement(options) {
 		var styleElement = document.createElement("style");
 		options.attrs.type = "text/css";
-	
+
 		attachTagAttrs(styleElement, options.attrs);
 		insertStyleElement(options, styleElement);
 		return styleElement;
 	}
-	
+
 	function createLinkElement(options) {
 		var linkElement = document.createElement("link");
 		options.attrs.type = "text/css";
 		options.attrs.rel = "stylesheet";
-	
+
 		attachTagAttrs(linkElement, options.attrs);
 		insertStyleElement(options, linkElement);
 		return linkElement;
 	}
-	
+
 	function attachTagAttrs(element, attrs) {
 		Object.keys(attrs).forEach(function (key) {
 			element.setAttribute(key, attrs[key]);
 		});
 	}
-	
+
 	function addStyle(obj, options) {
 		var styleElement, update, remove;
-	
+
 		if (options.singleton) {
 			var styleIndex = singletonCounter++;
 			styleElement = singletonElement || (singletonElement = createStyleElement(options));
@@ -3970,9 +3972,9 @@
 				removeStyleElement(styleElement);
 			};
 		}
-	
+
 		update(obj);
-	
+
 		return function updateStyle(newObj) {
 			if(newObj) {
 				if(newObj.css === obj.css && newObj.media === obj.media && newObj.sourceMap === obj.sourceMap)
@@ -3983,19 +3985,19 @@
 			}
 		};
 	}
-	
+
 	var replaceText = (function () {
 		var textStore = [];
-	
+
 		return function (index, replacement) {
 			textStore[index] = replacement;
 			return textStore.filter(Boolean).join('\n');
 		};
 	})();
-	
+
 	function applyToSingletonTag(styleElement, index, remove, obj) {
 		var css = remove ? "" : obj.css;
-	
+
 		if (styleElement.styleSheet) {
 			styleElement.styleSheet.cssText = replaceText(index, css);
 		} else {
@@ -4009,15 +4011,15 @@
 			}
 		}
 	}
-	
+
 	function applyToTag(styleElement, obj) {
 		var css = obj.css;
 		var media = obj.media;
-	
+
 		if(media) {
 			styleElement.setAttribute("media", media)
 		}
-	
+
 		if(styleElement.styleSheet) {
 			styleElement.styleSheet.cssText = css;
 		} else {
@@ -4027,33 +4029,33 @@
 			styleElement.appendChild(document.createTextNode(css));
 		}
 	}
-	
+
 	function updateLink(linkElement, options, obj) {
 		var css = obj.css;
 		var sourceMap = obj.sourceMap;
-	
+
 		/* If convertToAbsoluteUrls isn't defined, but sourcemaps are enabled
 		and there is no publicPath defined then lets turn convertToAbsoluteUrls
 		on by default.  Otherwise default to the convertToAbsoluteUrls option
 		directly
 		*/
 		var autoFixUrls = options.convertToAbsoluteUrls === undefined && sourceMap;
-	
+
 		if (options.convertToAbsoluteUrls || autoFixUrls){
 			css = fixUrls(css);
 		}
-	
+
 		if(sourceMap) {
 			// http://stackoverflow.com/a/26603875
 			css += "\n/*# sourceMappingURL=data:application/json;base64," + btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))) + " */";
 		}
-	
+
 		var blob = new Blob([css], { type: "text/css" });
-	
+
 		var oldSrc = linkElement.href;
-	
+
 		linkElement.href = URL.createObjectURL(blob);
-	
+
 		if(oldSrc)
 			URL.revokeObjectURL(oldSrc);
 	}
@@ -4076,38 +4078,38 @@
 	 * A rudimentary test suite is located at `test/fixUrls.js` and can be run via the `npm test` command.
 	 *
 	 */
-	
+
 	module.exports = function (css) {
 	  // get current location
 	  var location = typeof window !== "undefined" && window.location;
-	
+
 	  if (!location) {
 	    throw new Error("fixUrls requires window.location");
 	  }
-	
+
 		// blank or null?
 		if (!css || typeof css !== "string") {
 		  return css;
 	  }
-	
+
 	  var baseUrl = location.protocol + "//" + location.host;
 	  var currentDir = baseUrl + location.pathname.replace(/\/[^\/]*$/, "/");
-	
+
 		// convert each url(...)
 		var fixedCss = css.replace(/url *\( *(.+?) *\)/g, function(fullMatch, origUrl) {
 			// strip quotes (if they exist)
 			var unquotedOrigUrl = origUrl
 				.replace(/^"(.*)"$/, function(o, $1){ return $1; })
 				.replace(/^'(.*)'$/, function(o, $1){ return $1; });
-	
+
 			// already a full url? no change
 			if (/^(#|data:|http:\/\/|https:\/\/|file:\/\/\/)/i.test(unquotedOrigUrl)) {
 			  return fullMatch;
 			}
-	
+
 			// convert the url to a full url
 			var newUrl;
-	
+
 			if (unquotedOrigUrl.indexOf("//") === 0) {
 			  	//TODO: should we add protocol?
 				newUrl = unquotedOrigUrl;
@@ -4118,11 +4120,11 @@
 				// path should be relative to current directory
 				newUrl = currentDir + unquotedOrigUrl.replace(/^\.\//, ""); // Strip leading './'
 			}
-	
+
 			// send back the fixed url(...)
 			return "url(" + JSON.stringify(newUrl) + ")";
 		});
-	
+
 		// send back the fixed css
 		return fixedCss;
 	};
@@ -4130,10 +4132,174 @@
 
 /***/ }),
 /* 9 */
+/***/ (function(module, exports) {
+
+	/*eslint-env browser*/
+
+	var clientOverlay = document.createElement('div');
+	clientOverlay.style.display = 'none';
+	clientOverlay.style.background = '#fdd';
+	clientOverlay.style.color = '#000';
+	clientOverlay.style.position = 'fixed';
+	clientOverlay.style.zIndex = 9999;
+	clientOverlay.style.left = 0;
+	clientOverlay.style.right = 0;
+	clientOverlay.style.top = 0;
+	clientOverlay.style.bottom = 0;
+	clientOverlay.style.overflow = 'auto';
+
+	if (document.body) {
+	  document.body.appendChild(clientOverlay);
+	}
+
+	exports.showProblems =
+	function showProblems(lines) {
+	  clientOverlay.innerHTML = '';
+	  clientOverlay.style.display = 'block';
+	  lines.forEach(function(msg) {
+	    console.warn("[HMR] " + msg);
+	    var pre = document.createElement('pre');
+	    pre.textContent = msg;
+	    clientOverlay.appendChild(pre);
+	  });
+	};
+
+	exports.clear =
+	function clear() {
+	  clientOverlay.innerHTML = '';
+	  clientOverlay.style.display = 'none';
+	};
+
+
+
+/***/ }),
+/* 10 */
+/***/ (function(module, exports) {
+
+	'use strict';
+	module.exports = function () {
+		return /(?:(?:\u001b\[)|\u009b)(?:(?:[0-9]{1,3})?(?:(?:;[0-9]{0,3})*)?[A-M|f-m])|\u001b[A-M]/g;
+	};
+
+
+/***/ }),
+/* 11 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	var ansiRegex = __webpack_require__(10)();
+
+	module.exports = function (str) {
+		return typeof str === 'string' ? str.replace(ansiRegex, '') : str;
+	};
+
+
+/***/ }),
+/* 12 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	/**
+	 * Based heavily on https://github.com/webpack/webpack/blob/
+	 *  c0afdf9c6abc1dd70707c594e473802a566f7b6e/hot/only-dev-server.js
+	 * Original copyright Tobias Koppers @sokra (MIT license)
+	 */
+
+	/* global window __webpack_hash__ */
+
+	if (false) {
+	  throw new Error("[HMR] Hot Module Replacement is disabled.");
+	}
+
+	var lastHash;
+	var failureStatuses = { abort: 1, fail: 1 };
+	var applyOptions = { ignoreUnaccepted: true };
+
+	function upToDate(hash) {
+	  if (hash) lastHash = hash;
+	  return lastHash == __webpack_require__.h();
+	}
+
+	module.exports = function(hash, moduleMap, reload) {
+	  if (!upToDate(hash) && module.hot.status() == "idle") {
+	    console.log("[HMR] Checking for updates on the server...");
+	    check();
+	  }
+
+	  function check() {
+	    module.hot.check(function(err, updatedModules) {
+	      if (err) return handleError(err);
+
+	      if(!updatedModules) {
+	        console.warn("[HMR] Cannot find update (Full reload needed)");
+	        console.warn("[HMR] (Probably because of restarting the server)");
+	        performReload();
+	        return null;
+	      }
+
+	      module.hot.apply(applyOptions, function(applyErr, renewedModules) {
+	        if (applyErr) return handleError(applyErr);
+
+	        if (!upToDate()) check();
+
+	        logUpdates(updatedModules, renewedModules);
+	      });
+	    });
+	  }
+
+	  function logUpdates(updatedModules, renewedModules) {
+	    var unacceptedModules = updatedModules.filter(function(moduleId) {
+	      return renewedModules && renewedModules.indexOf(moduleId) < 0;
+	    });
+
+	    if(unacceptedModules.length > 0) {
+	      console.warn(
+	        "[HMR] The following modules couldn't be hot updated: " +
+	        "(Full reload needed)"
+	      );
+	      unacceptedModules.forEach(function(moduleId) {
+	        console.warn("[HMR]  - " + moduleMap[moduleId]);
+	      });
+	      performReload();
+	      return;
+	    }
+
+	    if(!renewedModules || renewedModules.length === 0) {
+	      console.log("[HMR] Nothing hot updated.");
+	    } else {
+	      console.log("[HMR] Updated modules:");
+	      renewedModules.forEach(function(moduleId) {
+	        console.log("[HMR]  - " + moduleMap[moduleId]);
+	      });
+	    }
+
+	    if (upToDate()) {
+	      console.log("[HMR] App is up to date.");
+	    }
+	  }
+
+	  function handleError(err) {
+	    if (module.hot.status() in failureStatuses) {
+	      console.warn("[HMR] Cannot check for update (Full reload needed)");
+	      console.warn("[HMR] " + err.stack || err.message);
+	      performReload();
+	      return;
+	    }
+	    console.warn("[HMR] Update check failed: " + err.stack || err.message);
+	  }
+
+	  function performReload() {
+	    console.warn("[HMR] Reloading page");
+	    if (reload) window.location.reload();
+	  }
+	};
+
+
+/***/ }),
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
-	
+
 	// load the styles
 	var content = __webpack_require__(1);
 	if(typeof content === 'string') content = [[module.id, content, '']];
@@ -4155,54 +4321,12 @@
 	}
 
 /***/ }),
-/* 10 */
-/***/ (function(module, exports) {
-
-	/*eslint-env browser*/
-	
-	var clientOverlay = document.createElement('div');
-	clientOverlay.style.display = 'none';
-	clientOverlay.style.background = '#fdd';
-	clientOverlay.style.color = '#000';
-	clientOverlay.style.position = 'fixed';
-	clientOverlay.style.zIndex = 9999;
-	clientOverlay.style.left = 0;
-	clientOverlay.style.right = 0;
-	clientOverlay.style.top = 0;
-	clientOverlay.style.bottom = 0;
-	clientOverlay.style.overflow = 'auto';
-	
-	if (document.body) {
-	  document.body.appendChild(clientOverlay);
-	}
-	
-	exports.showProblems =
-	function showProblems(lines) {
-	  clientOverlay.innerHTML = '';
-	  clientOverlay.style.display = 'block';
-	  lines.forEach(function(msg) {
-	    console.warn("[HMR] " + msg);
-	    var pre = document.createElement('pre');
-	    pre.textContent = msg;
-	    clientOverlay.appendChild(pre);
-	  });
-	};
-	
-	exports.clear =
-	function clear() {
-	  clientOverlay.innerHTML = '';
-	  clientOverlay.style.display = 'none';
-	};
-	
-
-
-/***/ }),
-/* 11 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(__resourceQuery) {/*eslint-env browser*/
 	/*global __resourceQuery*/
-	
+
 	var options = {
 	  path: "/__webpack_hmr",
 	  timeout: 20 * 1000,
@@ -4227,28 +4351,28 @@
 	    options.reload = reloadMatch[1] !== 'false';
 	  }
 	}
-	
+
 	connect();
-	
+
 	function connect() {
 	  var source = new window.EventSource(options.path);
 	  var lastActivity = new Date();
-	
+
 	  source.onopen = handleOnline;
 	  source.onmessage = handleMessage;
 	  source.onerror = handleDisconnect;
-	
+
 	  var timer = setInterval(function() {
 	    if ((new Date() - lastActivity) > options.timeout) {
 	      handleDisconnect();
 	    }
 	  }, options.timeout / 2);
-	
+
 	  function handleOnline() {
 	    console.log("[HMR] connected");
 	    lastActivity = new Date();
 	  }
-	
+
 	  function handleMessage(event) {
 	    lastActivity = new Date();
 	    if (event.data == "\uD83D\uDC93") {
@@ -4260,22 +4384,22 @@
 	      console.warn("Invalid HMR message: " + event.data + "\n" + ex);
 	    }
 	  }
-	
+
 	  function handleDisconnect() {
 	    clearInterval(timer);
 	    source.close();
 	    setTimeout(connect, options.timeout);
 	  }
-	
+
 	}
-	
-	var strip = __webpack_require__(13);
-	
+
+	var strip = __webpack_require__(11);
+
 	var overlay;
 	if (options.overlay) {
-	  overlay = __webpack_require__(10);
+	  overlay = __webpack_require__(9);
 	}
-	
+
 	function problems(type, obj) {
 	  console.warn("[HMR] bundle has " + type + ":");
 	  var list = [];
@@ -4286,13 +4410,13 @@
 	  });
 	  if (overlay && type !== 'warnings') overlay.showProblems(list);
 	}
-	
+
 	function success() {
 	  if (overlay) overlay.clear();
 	}
-	
-	var processUpdate = __webpack_require__(14);
-	
+
+	var processUpdate = __webpack_require__(12);
+
 	function processMessage(obj) {
 	  if (obj.action == "building") {
 	    console.log("[HMR] bundle rebuilding");
@@ -4311,130 +4435,8 @@
 	    }
 	  }
 	}
-	
+
 	/* WEBPACK VAR INJECTION */}.call(exports, "?reload=true"))
-
-/***/ }),
-/* 12 */
-/***/ (function(module, exports) {
-
-	'use strict';
-	module.exports = function () {
-		return /(?:(?:\u001b\[)|\u009b)(?:(?:[0-9]{1,3})?(?:(?:;[0-9]{0,3})*)?[A-M|f-m])|\u001b[A-M]/g;
-	};
-
-
-/***/ }),
-/* 13 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-	var ansiRegex = __webpack_require__(12)();
-	
-	module.exports = function (str) {
-		return typeof str === 'string' ? str.replace(ansiRegex, '') : str;
-	};
-
-
-/***/ }),
-/* 14 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	/**
-	 * Based heavily on https://github.com/webpack/webpack/blob/
-	 *  c0afdf9c6abc1dd70707c594e473802a566f7b6e/hot/only-dev-server.js
-	 * Original copyright Tobias Koppers @sokra (MIT license)
-	 */
-	
-	/* global window __webpack_hash__ */
-	
-	if (false) {
-	  throw new Error("[HMR] Hot Module Replacement is disabled.");
-	}
-	
-	var lastHash;
-	var failureStatuses = { abort: 1, fail: 1 };
-	var applyOptions = { ignoreUnaccepted: true };
-	
-	function upToDate(hash) {
-	  if (hash) lastHash = hash;
-	  return lastHash == __webpack_require__.h();
-	}
-	
-	module.exports = function(hash, moduleMap, reload) {
-	  if (!upToDate(hash) && module.hot.status() == "idle") {
-	    console.log("[HMR] Checking for updates on the server...");
-	    check();
-	  }
-	
-	  function check() {
-	    module.hot.check(function(err, updatedModules) {
-	      if (err) return handleError(err);
-	
-	      if(!updatedModules) {
-	        console.warn("[HMR] Cannot find update (Full reload needed)");
-	        console.warn("[HMR] (Probably because of restarting the server)");
-	        performReload();
-	        return null;
-	      }
-	
-	      module.hot.apply(applyOptions, function(applyErr, renewedModules) {
-	        if (applyErr) return handleError(applyErr);
-	
-	        if (!upToDate()) check();
-	
-	        logUpdates(updatedModules, renewedModules);
-	      });
-	    });
-	  }
-	
-	  function logUpdates(updatedModules, renewedModules) {
-	    var unacceptedModules = updatedModules.filter(function(moduleId) {
-	      return renewedModules && renewedModules.indexOf(moduleId) < 0;
-	    });
-	
-	    if(unacceptedModules.length > 0) {
-	      console.warn(
-	        "[HMR] The following modules couldn't be hot updated: " +
-	        "(Full reload needed)"
-	      );
-	      unacceptedModules.forEach(function(moduleId) {
-	        console.warn("[HMR]  - " + moduleMap[moduleId]);
-	      });
-	      performReload();
-	      return;
-	    }
-	
-	    if(!renewedModules || renewedModules.length === 0) {
-	      console.log("[HMR] Nothing hot updated.");
-	    } else {
-	      console.log("[HMR] Updated modules:");
-	      renewedModules.forEach(function(moduleId) {
-	        console.log("[HMR]  - " + moduleMap[moduleId]);
-	      });
-	    }
-	
-	    if (upToDate()) {
-	      console.log("[HMR] App is up to date.");
-	    }
-	  }
-	
-	  function handleError(err) {
-	    if (module.hot.status() in failureStatuses) {
-	      console.warn("[HMR] Cannot check for update (Full reload needed)");
-	      console.warn("[HMR] " + err.stack || err.message);
-	      performReload();
-	      return;
-	    }
-	    console.warn("[HMR] Update check failed: " + err.stack || err.message);
-	  }
-	
-	  function performReload() {
-	    console.warn("[HMR] Reloading page");
-	    if (reload) window.location.reload();
-	  }
-	};
-
 
 /***/ })
 /******/ ]);

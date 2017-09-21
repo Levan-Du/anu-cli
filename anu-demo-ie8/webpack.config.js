@@ -1,8 +1,7 @@
 const webpack = require('webpack'),
     path = require('path'),
     HtmlWebpackPlugin = require('html-webpack-plugin'),
-    TransferWebpackPlugin = require('transfer-webpack-plugin'),
-    es3ifyPlugin = require('es3ify-webpack-plugin');
+    TransferWebpackPlugin = require('transfer-webpack-plugin');
 
 
 module.exports = {
@@ -26,10 +25,13 @@ module.exports = {
         }, {
             test: /\.css$/,
             loader: 'style-loader!css-loader'
+        }],
+        postLoaders: [{
+            test: /\.js$/,
+            loader: "es3ify-loader"
         }]
     },
     plugins: [
-        new es3ifyPlugin(),
         new HtmlWebpackPlugin({
             template: path.join(__dirname, 'src/index.html'),
             filename: 'index.html',
