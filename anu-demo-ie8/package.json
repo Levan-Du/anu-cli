@@ -32,7 +32,7 @@
     "anujs": "^1.0.7",
     "console-polyfill": "^0.3.0",
     "html5shiv": "^3.7.3",
-    "react-router": "^4.1.2",
+    "react-router": "^2.8.1",
     "react-router-dom": "^4.1.2"
   }
 }

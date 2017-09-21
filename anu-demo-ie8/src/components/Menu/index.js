@@ -1,9 +1,8 @@
 const React = require('react');
-const ReactDOM = require('react-dom');
-const ReactRouterDOM = require('react-router-dom');
+const ReactRouter = require('react-router');
 
 
-const { Link } = ReactRouterDOM;
+const { Link } = ReactRouter;
 
 const SubmenuItem = (props) => {
     return (
@@ -26,7 +25,7 @@ const Submenu = (props) => {
 }
 
 const MenuItem = (props) => {
-    console.log(props.children);
+    
     return (
         <li>
             <header>
@@ -61,13 +60,15 @@ class Menu extends React.Component {
 
 var styles = {
     menu: {
-        height: '100%'
+        height: '100%',
+        width:200,
+        float:'left'
     },
     submenuItem: {
         paddingLeft: 40
     },
     submenuItemLink: {
-        color: '#ccc'
+        color: '#666'
     }
 }
 

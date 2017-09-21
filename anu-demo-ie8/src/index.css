@@ -25,3 +25,11 @@ li {
 #example {
     height: 100%;
 }
+
+.container{
+    float: left;
+}
+
+.main{
+    overflow: hidden;
+}

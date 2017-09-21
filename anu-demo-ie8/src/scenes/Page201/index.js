@@ -4,13 +4,13 @@ const ReactDOM = require('react-dom');
 var styles = {
     page: {
         height: '100%',
-        background: '#28e'
+        background: '#ca3'
     }
 }
 
 module.exports = () =>
     <article style={styles.page}>
-	<h3>this is page101</h3>
-	<p>1111111111111111111</p>
+	<h3>this is page201</h3>
+	<p>3333333333333333333</p>
 </article>
 
