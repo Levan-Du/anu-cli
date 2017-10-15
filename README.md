@@ -15,3 +15,11 @@ anujs是react的迷你版，由去哪儿前端大神司徒正美推出，完全�
 
 5. npm start
   运行项目，打开浏览器输入http://localhost:3000或http://localhost:8080
+
+
+
+<h3>兼容低版本ie说明<h3>
+1.请使用commandjs规范，如使用require代替import，使用module.exports代替export等。如要使用import等语法，请自行配制。
+2.使用webpack1
+3.webpack-hot-middleware经测试2.1.0版本以上不兼容ie8及以下版本浏览器
+4.style-loader经测试0.14版本以上不兼容ie8及以下版本浏览器
