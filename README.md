@@ -19,7 +19,15 @@ anujs是react的迷你版，由去哪儿前端大神司徒正美推出，完全�
 
 
 <h3>兼容低版本ie说明<h3>
+<p>
 1.请使用commandjs规范，如使用require代替import，使用module.exports代替export等。如要使用import等语法，请自行配制。
+ </p>
+ <p>
 2.使用webpack1
+ </p>
+ <p>
 3.webpack-hot-middleware经测试2.1.0版本以上不兼容ie8及以下版本浏览器
+ </p>
+ <p>
 4.style-loader经测试0.14版本以上不兼容ie8及以下版本浏览器
+ </p>
