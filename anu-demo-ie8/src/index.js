@@ -55,13 +55,13 @@ window.onload = function() {
     window.s = ReactDOM.render( 
     	<Router history={hashHistory}>
     		<Route component={App} path="/">
-    			<IndexRoute omponent={Page101}>
+    			<IndexRoute component={Page101}>
     			</IndexRoute>
-    			<Route omponent={Page102} path="page102">
+    			<Route component={Page102} path="page102">
     			</Route>
-    			<Route omponent={Page201} path="page201">
+    			<Route component={Page201} path="page201">
     			</Route>
-    			<Route omponent={Page202} path="page202">
+    			<Route component={Page202} path="page202">
     			</Route>
     		</Route>
     	</Router>,
