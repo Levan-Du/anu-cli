@@ -16,5 +16,8 @@
   "devDependencies": {
     "es3ify-loader": "^0.2.0",
     "webpack-hot-middleware": "^2.1.0"
+  },
+  "script": {
+    "test": "node ./anu-cli.js test --ie"
   }
 }

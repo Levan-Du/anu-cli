@@ -19,6 +19,6 @@ gs(demoname, pname)
     .then(() => {
         console.log('success');
     })
-    .catch(function(err) {
+    .catch(function (err) {
         if (err) return console.error(err)
     });
